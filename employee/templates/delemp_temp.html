@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Delete Employee</h2>
+    <!-- Feedback Message -->
+    {% if msg %}
+    <div class="alert alert-info" role="alert">
+        {{ msg }}
+    </div>
+    {% endif %}
+    <!-- Delete Form -->
+    <form action="/delemp" method="post">
+        <div class="mb-3">
+            <label for="empno" class="form-label">Employee Number</label>
+            <input type="number" class="form-control" id="empno" name="empno" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+{% endblock %}

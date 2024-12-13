@@ -1,0 +1,32 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Employee List</h2>
+    {% if emp %}
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Employee No</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Job Title</th>
+                <th scope="col">Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in emp %}
+            <tr>
+                <td>{{ row.0 }}</td>
+                <td>{{ row.1 }}</td>
+                <td>{{ row.2 }}</td>
+                <td>{{ row.3 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-warning" role="alert">
+        No employees found.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
